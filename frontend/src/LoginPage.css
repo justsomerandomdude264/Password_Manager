@@ -1,0 +1,64 @@
+.prime-container {
+  padding: 20px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  margin: auto; 
+  box-shadow: 10px 10px 10px #878791;
+}
+
+.heading {
+  text-align: center;
+}
+
+.input-container input {
+  margin: 10px;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 1px solid #444;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.input-container label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+  top: -12px;
+  left: 20px;
+  font-size: 14px;
+  color: #6c63ff;
+  background-color: #2c2c2c;
+  padding: 0 5px;
+}
+
+.add-button {
+  background-color: transparent;
+  color: #6c63ff;
+  border: 2px solid #6c63ff;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #6c63ff;
+}
+
+.add-button:hover {
+  background-color: #6c63ff;
+  color: #fff;
+}
