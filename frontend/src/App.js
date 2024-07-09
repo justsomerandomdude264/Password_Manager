@@ -1,8 +1,8 @@
-import LoginPage from "./LoginPage.jsx";
+import AuthPage from "./AuthPage.jsx";
 import PasswordDisplay from "./PasswordDisplay.jsx";
 
 function App() {
-  return (<LoginPage/>)
+  return (<AuthPage/>)
 }
 
 export default App;
