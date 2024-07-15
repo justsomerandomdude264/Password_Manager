@@ -2,12 +2,14 @@
 import React from "react";
 import "./PasswordSave.css"; 
 
+// PasswordSave component for adding new passwords
 const PasswordSave = ({ handleSubmit, inputs, handleInputChange, showPassword, toggleShowPassword }) => {
     return (
         <div className="form-container">
             <h2>Add New Password</h2>
             <div className="form-box">
                 <form className="password-add-form" onSubmit={handleSubmit}>
+                    {/* Website/Topic input */}
                     <div className="input-container">
                         <input
                             name="website"
@@ -19,6 +21,8 @@ const PasswordSave = ({ handleSubmit, inputs, handleInputChange, showPassword, t
                         />
                         <label htmlFor="website">Website/Topic</label>
                     </div>
+
+                    {/* Username/ID input */}
                     <div className="input-container">
                         <input
                             name="username"
@@ -30,6 +34,8 @@ const PasswordSave = ({ handleSubmit, inputs, handleInputChange, showPassword, t
                         />
                         <label htmlFor="username">Username/ID</label>
                     </div>
+
+                    {/* Password input with show/hide functionality */}
                     <div className="input-container">
                         <input
                             name="password"
@@ -44,6 +50,8 @@ const PasswordSave = ({ handleSubmit, inputs, handleInputChange, showPassword, t
                             {showPassword ? "Hide" : "Show"}
                         </button>
                     </div>
+
+                    {/* Submit button */}
                     <div className="button-container">
                         <button type="submit" className="add-button">Add</button>
                     </div>
