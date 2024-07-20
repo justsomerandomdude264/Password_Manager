@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
-const isDev = require('electron-is-dev');
+
+const isDev = process.env.NODE_ENV === 'development';
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -10,7 +11,8 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false
     },
-    icon: path.join(__dirname, 'assets/windows/password_icon.png')
+    icon: path.join(__dirname, '../assets/windows/password_icon.png'),
+    autoHideMenuBar: true,
   });
 
   win.loadURL(

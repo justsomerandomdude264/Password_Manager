@@ -6,6 +6,7 @@
   "homepage": "./",
   "private": true,
   "dependencies": {
+    "electron-store": "^10.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "reactjs-popup": "^2.0.6"
@@ -20,7 +21,6 @@
     "css-loader": "^5.2.6",
     "electron": "^13.1.2",
     "electron-builder": "^22.11.7",
-    "electron-is-dev": "^2.0.0",
     "html-webpack-plugin": "^5.3.1",
     "style-loader": "^2.0.0",
     "wait-on": "^5.3.0",
@@ -31,38 +31,30 @@
   "scripts": {
     "react-start": "webpack serve --mode development",
     "react-build": "webpack --mode production",
-    "electron-build": "electron-builder --win --linux",
+    "electron-build": "electron-builder --win",
     "build": "npm run react-build && npm run electron-build",
     "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder --win --linux"
+    "pack": "npm run react-build && electron-builder --dir",
+    "dist": "npm run react-build && electron-builder --win",
+    "dist:win": "npm run react-build && electron-builder --win"
   },
   "build": {
     "appId": "com.pw_manager.pw_manager_electron_app",
     "productName": "Password Manager",
     "files": [
       "build/**/*",
-      "node_modules/**/*",
-      "public/**/*"
+      "public/electron.js",
+      "package.json"
     ],
     "directories": {
       "buildResources": "assets"
-    },  
+    },
     "win": {
       "target": [
         "nsis",
         "msi"
       ],
       "icon": "assets/windows/password_icon.png"
-    },
-    "linux": {
-      "target": [
-        "deb",
-        "rpm",
-        "AppImage"
-      ],
-      "category": "Utility",
-      "icon": "assets/linux/password_icon.png"
     }
   },
   "author": {
