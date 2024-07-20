@@ -47,12 +47,7 @@
     ],
     "directories": {
       "buildResources": "assets"
-    },
-    "mac": {
-      "target": ["dmg"],
-      "category": "public.app-category.utilities",
-      "icon": "assets/macOS/password_icon.icns"
-    },
+    },  
     "win": {
       "target": [
         "nsis",
