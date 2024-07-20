@@ -1,0 +1,37 @@
+services:
+  mysqldb:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: password_manager_db
+      MYSQL_ROOT_PASSWORD: admin
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./password_manager
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8080:8080"
+    restart: always
+    # depends_on:
+    #   - mysql
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: password_manager_user
+      MYSQL_PASSWORD: rishipaliwal@321
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_BACKEND_URL: "http://backend:8080"
+
+volumes:
+  mysql_data:
