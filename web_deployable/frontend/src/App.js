@@ -10,7 +10,7 @@ function App() {
     // Check for stored username on component mount
     useEffect(() => {
         const storedUsername = localStorage.getItem('username');
-        if (storedUsername) {
+        if (storedUsername || (storedUsername == "null")) {
             setIsAuthenticated(true);
             setUsername(storedUsername);
         }

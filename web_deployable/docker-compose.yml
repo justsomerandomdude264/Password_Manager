@@ -1,27 +1,6 @@
+version: '3.8'
+
 services:
-  mysqldb:
-    image: mysql:latest
-    restart: always
-    environment:
-      MYSQL_DATABASE: password_manager_db
-      MYSQL_ROOT_PASSWORD: admin
-    ports:
-      - "3306:3306" 
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-  backend:
-    build:
-      context: ./password_manager
-      dockerfile: Dockerfile.backend
-    ports:
-      - "8080:8080"
-    restart: always
-    environment:
-      MYSQL_HOST: mysqldb
-      MYSQL_USER: passworddb_user
-      MYSQL_PASSWORD: rishipaliwal@321
-
   frontend:
     build:
       context: ./frontend
@@ -31,5 +10,36 @@ services:
     environment:
       REACT_APP_BACKEND_URL: "http://backend:8080"
 
+  app:
+    build:
+      context: ./password_manager
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/password_manager_db
+      - SPRING_DATASOURCE_USERNAME=passworddb_user
+      - SPRING_DATASOURCE_PASSWORD=rishipaliwal@321
+
+  db:
+    image: mysql:8.0.39
+    environment:
+      - MYSQL_DATABASE=password_manager_db
+      - MYSQL_USER=passworddb_user
+      - MYSQL_PASSWORD=rishipaliwal@321
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql_root_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    secrets:
+      - mysql_root_password
+
 volumes:
-  mysql_data:
+  mysql_data: 
+    name: password_manager_mysql_data
+
+secrets:
+  mysql_root_password:
+    file: ./mysql_root_password.txt
