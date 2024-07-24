@@ -67,7 +67,7 @@ To edit or review the source code:
    - This uses react as its frontend and java's spring boot framework for backend.
    - MySQL8 is used for database management.
    - Two tables are made one with user data and the other has password data mapped with users.
-   - All data managed using JPA in spring boot and multiple API endpoints are set up for multiple uses like register, login, saving passwords etc
+   - All data managed using JPA in spring boot and multiple API endpoints are set up for multiple uses like register, login, saving passwords etc.
    - The data stored is completely encrypted whether its user passwords or the passwords stored in the database.
    - The user account passswords include using sha256 hashing for encryption while for the saved passwords key based encryption is used.
 
