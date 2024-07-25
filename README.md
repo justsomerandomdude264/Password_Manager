@@ -11,7 +11,8 @@ This project aims to create a simple but efficient password manager. It includes
 To install this program on your Windows device:
 
 1. Download one of the installers from `Installers/Windows`.
-2. Double-click the installer and follow the prompts to install the program (`.msi` is recommended).
+2. Double-click the installer and follow the prompts to install the program.
+3. A warning might be seen as for windows defender if using `.msi` but the program is safe. The Read More button can be clicked and then it can be installed.
 
 ### Source Code
 
