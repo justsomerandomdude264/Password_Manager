@@ -74,5 +74,5 @@ To edit or review the source code:
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request.
 Would like if someone built the Mac and Linux installers.
+Contributions are welcome! Please fork the repository and submit a pull request.
