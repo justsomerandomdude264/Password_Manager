@@ -20,7 +20,7 @@ To edit or review the source code:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/KrishnaPaliwal264/Password_Manager.git
+    git clone https://github.com/justsomerandomdude264/Password_Manager.git
     ```
 2. Navigate to the `desktop_app` folder:
     ```sh
@@ -35,7 +35,7 @@ To use the web version, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/KrishnaPaliwal264/Password_Manager.git
+    git clone https://github.com/justsomerandomdude264/Password_Manager.git
     cd Password_Manager/web_deployable
     ```
 
@@ -50,7 +50,7 @@ To edit or review the source code:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/KrishnaPaliwal264/Password_Manager.git
+    git clone https://github.com/justsomerandomdude264/Password_Manager.git
     ```
 2. Navigate to the `web_deployable` folder:
     ```sh
